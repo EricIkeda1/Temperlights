@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import fogueteGif from "./assets/foguete.gif";
+
 
 function App() {
   return (
@@ -19,8 +21,8 @@ function App() {
         <h1>Rastreabilidade Industrial</h1>
         <p>Rastreabilidade de Produção industrial utilizando Visão Computacional</p>
         <button className="cta-btn">ORÇAMENTO →</button>
-        <img src="/assets/react.svg" alt="Foguete" className="rocket" />
-      </header>
+          <img src={fogueteGif} alt="Foguete" className="rocket" />
+        </header>
     </div>
   );
 }
