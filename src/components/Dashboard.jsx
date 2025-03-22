@@ -1,66 +1,82 @@
 import React from "react";
-import "../styles/Dashboard.css";
 import { LineChart, Line, PieChart, Pie, Tooltip, Legend, XAxis, YAxis, CartesianGrid } from "recharts";
+import "../styles/Dashboard.css";
 
 const productionData = [
-  { name: "Seg", lote1: 2, lote2: 5, lote3: 1 },
-  { name: "Ter", lote1: 4, lote2: 2, lote3: 3 },
-  { name: "Qua", lote1: 5, lote2: 8, lote3: 6 },
-  { name: "Qui", lote1: 8, lote2: 6, lote3: 7 },
-  { name: "Sex", lote1: 6, lote2: 10, lote3: 9 },
-  { name: "Sab", lote1: 3, lote2: 4, lote3: 2 },
-  { name: "Dom", lote1: 1, lote2: 3, lote3: 1 },
+  { name: "Jan", receita: 10 },
+  { name: "Feb", receita: 30 },
+  { name: "Mar", receita: 50 },
+  { name: "Apr", receita: 80 },
+  { name: "May", receita: 100 },
+  { name: "Jun", receita: 130 },
+  { name: "Jul", receita: 150 },
+  { name: "Aug", receita: 170 },
+  { name: "Sep", receita: 190 },
+  { name: "Oct", receita: 210 },
+  { name: "Nov", receita: 230 },
+  { name: "Dec", receita: 250 },
 ];
 
 const statusData = [
-  { name: "Realizado", value: 60 },
-  { name: "Em progresso", value: 12 },
-  { name: "Aguardando", value: 10 },
-  { name: "Perda", value: 4 },
+  { name: "Corte", value: 22.2, fill: "#8884d8" },
+  { name: "Carregamento", value: 33, fill: "#82ca9d" },
+  { name: "Lapidação", value: 29.1, fill: "#FFCC00" },
+  { name: "Forno de Têmpera", value: 15.6, fill: "#FF6B6B" },
 ];
 
 const Dashboard = () => {
   return (
-    <div className="dashboard">
-      <h1>PEDIDO #393 - AL. SEMPREVERDE</h1>
-      <div className="dashboard-layout">
-        <div className="production-analysis">
-          <h3>Análise de Produção</h3>
-          <LineChart width={400} height={250} data={productionData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="lote1" stroke="#8884d8" />
-            <Line type="monotone" dataKey="lote2" stroke="#82ca9d" />
-            <Line type="monotone" dataKey="lote3" stroke="#ff6b6b" />
-          </LineChart>
-          <div className="buttons">
-            <button className="lote1">LOTE 1</button>
-            <button className="lote2">LOTE 2</button>
-            <button className="lote3">LOTE 3</button>
-            <button className="add-lote">+</button>
+    <div className="dashboard-container">
+      <aside className="sidebar">
+        <h2>TEMPERLIGHTS</h2>
+        <input type="text" placeholder="Pesquisar" className="search" />
+        <nav>
+          <a href="#">📦 Pedidos</a>
+          <a href="#">📂 Projetos</a>
+          <a href="#">⚙️ Configurações</a>
+          <a href="#">🔐 Permissões</a>
+          <a href="#">🗑️ Excluídos</a>
+        </nav>
+      </aside>
+
+      <main className="content">
+        <header className="navbar">
+          <span>Ana Ribeiro - Administradora</span>
+        </header>
+
+        <div className="dashboard">
+          <h1>DADOS</h1>
+          <div className="stats">
+            <div className="stats-card">Vendas Totais (R$) <h2>890</h2></div>
+            <div className="stats-card">Perdas na Produção (R$) <h2>977</h2></div>
+            <div className="stats-card">Pedidos em Andamento <h2>3</h2></div>
+            <div className="stats-card">Total de Pedidos <h2>567</h2></div>
+          </div>
+
+          <div className="charts-container">
+            <div className="chart">
+              <h3>Estatísticas de Receita</h3>
+              <LineChart width={400} height={250} data={productionData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="receita" stroke="#ffffff" />
+              </LineChart>
+            </div>
+
+            <div className="chart">
+              <h3>Perdas Por Setor</h3>
+              <PieChart width={250} height={250}>
+                <Pie data={statusData} dataKey="value" cx="50%" cy="50%" outerRadius={80} label />
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </div>
           </div>
         </div>
-        <div className="status-chart">
-          <h3>Lote 1</h3>
-          <PieChart width={250} height={250}>
-            <Pie data={statusData} dataKey="value" cx="50%" cy="50%" outerRadius={80} label />
-            <Tooltip />
-            <Legend />
-          </PieChart>
-        </div>
-        <div className="order-status">
-          <h3>Resumo do Pedido</h3>
-          <div className="status-boxes">
-            <div className="status-item pending">5 EM ANDAMENTO</div>
-            <div className="status-item alert">1 ALERTA</div>
-            <div className="status-item completed">5 FINALIZADO</div>
-            <div className="status-item lost">1 PERDA</div>
-          </div>
-        </div>
-      </div>
+      </main>
     </div>
   );
 };
