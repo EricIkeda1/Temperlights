@@ -1,8 +1,8 @@
 import React from "react";
 import { LineChart, Line, PieChart, Pie, Tooltip, Legend, XAxis, YAxis, CartesianGrid } from "recharts";
-import "../styles/Dashboard.css";
+import "../styles/dashboard.css";
 
-const productionData = [
+const dashboardProductionData = [
   { name: "Jan", receita: 10 },
   { name: "Feb", receita: 30 },
   { name: "Mar", receita: 50 },
@@ -17,7 +17,7 @@ const productionData = [
   { name: "Dec", receita: 250 },
 ];
 
-const statusData = [
+const dashboardStatusData = [
   { name: "Corte", value: 22.2, fill: "#8884d8" },
   { name: "Carregamento", value: 33, fill: "#82ca9d" },
   { name: "Lapidação", value: 29.1, fill: "#FFCC00" },
@@ -27,10 +27,10 @@ const statusData = [
 const Dashboard = () => {
   return (
     <div className="dashboard-container">
-      <aside className="sidebar">
-        <h2>TEMPERLIGHTS</h2>
-        <input type="text" placeholder="Pesquisar" className="search" />
-        <nav>
+      <aside className="dashboard-sidebar">
+        <h2 className="dashboard-title">TEMPERLIGHTS</h2>
+        <input type="text" placeholder="Pesquisar" className="dashboard-search" />
+        <nav className="dashboard-menu">
           <a href="#">📦 Pedidos</a>
           <a href="#">📂 Projetos</a>
           <a href="#">⚙️ Configurações</a>
@@ -39,37 +39,53 @@ const Dashboard = () => {
         </nav>
       </aside>
 
-      <main className="content">
-        <header className="navbar">
+      <main className="dashboard-content">
+        <header className="dashboard-navbar">
           <span>Ana Ribeiro - Administradora</span>
         </header>
 
-        <div className="dashboard">
-          <h1>DADOS</h1>
-          <div className="stats">
-            <div className="stats-card">Vendas Totais (R$) <h2>890</h2></div>
-            <div className="stats-card">Perdas na Produção (R$) <h2>977</h2></div>
-            <div className="stats-card">Pedidos em Andamento <h2>3</h2></div>
-            <div className="stats-card">Total de Pedidos <h2>567</h2></div>
+        <div className="dashboard-main">
+          <h1 className="dashboard-header">DADOS</h1>
+          <div className="dashboard-stats">
+            <div className="dashboard-stats-card dashboard-blue">
+              <h3>Vendas Totais (R$)</h3>
+              <h2>890</h2>
+              <p>+3,5% essa semana</p>
+            </div>
+            <div className="dashboard-stats-card dashboard-red">
+              <h3>Perdas na Produção (R$)</h3>
+              <h2>977</h2>
+              <p>-5,1% essa semana</p>
+            </div>
+            <div className="dashboard-stats-card dashboard-blue">
+              <h3>Pedidos em Andamento</h3>
+              <h2>3</h2>
+              <p>+1 essa semana</p>
+            </div>
+            <div className="dashboard-stats-card dashboard-blue">
+              <h3>Total de Pedidos</h3>
+              <h2>567</h2>
+              <p>+3 essa semana</p>
+            </div>
           </div>
 
-          <div className="charts-container">
-            <div className="chart">
+          <div className="dashboard-charts-container">
+            <div className="dashboard-chart dashboard-line-chart">
               <h3>Estatísticas de Receita</h3>
-              <LineChart width={400} height={250} data={productionData}>
+              <LineChart width={600} height={300} data={dashboardProductionData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <XAxis dataKey="name" stroke="#ffffff" />
+                <YAxis stroke="#ffffff" />
                 <Tooltip />
                 <Legend />
                 <Line type="monotone" dataKey="receita" stroke="#ffffff" />
               </LineChart>
             </div>
 
-            <div className="chart">
+            <div className="dashboard-chart dashboard-pie-chart">
               <h3>Perdas Por Setor</h3>
-              <PieChart width={250} height={250}>
-                <Pie data={statusData} dataKey="value" cx="50%" cy="50%" outerRadius={80} label />
+              <PieChart width={300} height={300}>
+                <Pie data={dashboardStatusData} dataKey="value" cx="50%" cy="50%" outerRadius={100} label />
                 <Tooltip />
                 <Legend />
               </PieChart>
