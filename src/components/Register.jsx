@@ -18,19 +18,19 @@ const Register = () => {
       </nav>
       
       <h2 className="register-title">Criar Nova Conta</h2>
-      <p className="register-subtitle">Ainda não tem uma conta? Ingrese já</p>
+      <p className="register-subtitle">Ainda não tem uma conta? Ingresse já</p>
       <form className="register-form">
         <label className="register-label">Nome</label>
-        <input className="register-input" type="text" placeholder="Digite seu nome" />
+        <input className="register-input" type="text" placeholder="Jiara Martins" />
         
         <label className="register-label">E-mail</label>
-        <input className="register-input" type="email" placeholder="Digite seu e-mail" />
+        <input className="register-input" type="email" placeholder="hello@reallygreatsite.com" />
         
         <label className="register-label">Senha</label>
-        <input className="register-input" type="password" placeholder="Digite sua senha" />
+        <input className="register-input" type="password" placeholder="******" />
         
         <label className="register-label">CNPJ</label>
-        <input className="register-input" type="text" placeholder="Digite seu CNPJ" />
+        <input className="register-input" type="text" placeholder="******" />
         
         <button className="register-button" type="submit">Criar Conta</button>
       </form>
