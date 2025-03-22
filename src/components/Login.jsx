@@ -1,7 +1,14 @@
 import "./../styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate(); 
+
+  const handleLogin = (event) => {
+    event.preventDefault(); 
+    navigate("/dashboard"); 
+  };
+
   return (
     <div className="login-container">
       <nav className="login-navbar">
@@ -21,7 +28,7 @@ const Login = () => {
         <h2 className="login-title">Login</h2>
         <p className="login-subtitle">Ingressar em uma conta existente</p>
 
-        <form>
+        <form onSubmit={handleLogin}> 
           <label className="login-label">E-MAIL</label>
           <input type="email" className="login-input" placeholder="hello@reallygreatsite.com" required />
 
@@ -32,7 +39,7 @@ const Login = () => {
         </form>
 
         <p className="login-footer">
-        Ainda não tem conta? <Link to="/register">Cadastre-se</Link>
+          Ainda não tem conta? <Link to="/register">Cadastre-se</Link>
         </p>
       </div>
     </div>
