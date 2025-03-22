@@ -4,6 +4,19 @@ import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <div className="register-container">
+      <nav className="register-navbar">
+        <div className="register-logo">Temperlights</div>
+        <ul className="register-nav-links">
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="#">Sobre nós</Link></li>
+          <li><Link to="#">Search</Link></li>
+          <li>
+            <input type="text" placeholder="Search" className="register-search-input" />
+          </li>
+          <li><Link to="#">🔍</Link></li>
+        </ul>
+      </nav>
+      
       <h2 className="register-title">Criar Nova Conta</h2>
       <p className="register-subtitle">Ainda não tem uma conta? Ingrese já</p>
       <form className="register-form">
@@ -21,7 +34,7 @@ const Register = () => {
         
         <button className="register-button" type="submit">Criar Conta</button>
       </form>
-      <p className="register-login-link">Já tem conta? <a href="/login">Login</a></p>
+      <Link to="/login">Login</Link>
     </div>
   );
 };

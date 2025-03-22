@@ -1,50 +1,89 @@
 .register-container {
-    background-color: #0b0d1e;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .register-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .register-subtitle {
-    margin-bottom: 20px;
-  }
-  
-  .register-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  .register-label {
-    margin-top: 10px;
-  }
-  
-  .register-input {
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: none;
-  }
-  
-  .register-button {
-    background-color: #3b82f6;
-    color: white;
-    padding: 10px;
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .register-login-link {
-    margin-top: 10px;
-  }
-  
+  background-color: #0b0d1e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 1280px; 
+  min-height: 720px; 
+  overflow: hidden; 
+  width: 100%;
+}
+
+.register-navbar {
+  width: 100%;
+  background-color: #1a1c2c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.register-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.register-nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.register-nav-links li {
+  display: inline;
+}
+
+.register-nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.register-search-input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.register-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  margin-bottom: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.register-label {
+  margin-top: 10px;
+}
+
+.register-input {
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.register-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.register-login-link {
+  margin-top: 10px;
+}

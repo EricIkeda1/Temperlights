@@ -1,16 +1,28 @@
-.login-navbar {
+.login-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 15px 60px;
-    background: #f8f9fa;
-    border-bottom: 2px solid #ddd;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
+    width: 100vw;
+    height: 100vh;
+    min-width: 1280px; 
+    min-height: 720px; 
+    background: #0b0c1d;
+    overflow: hidden; 
+}
+
+.login-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 60px;
+  background: #f8f9fa;
+  border-bottom: 2px solid #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
   .login-logo {
     font-size: 24px;
     font-weight: bold;
