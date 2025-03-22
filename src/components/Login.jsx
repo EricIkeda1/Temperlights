@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate(); 
-
-  const handleLogin = (event) => {
+  
+  const handleLogin = (event) => { /*Como ainda não tem banco de dados, coloque algum email e a senha ficticio*/
     event.preventDefault(); 
     navigate("/dashboard"); 
   };
