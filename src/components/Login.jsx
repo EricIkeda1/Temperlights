@@ -32,7 +32,7 @@ const Login = () => {
         </form>
 
         <p className="login-footer">
-          Ainda não tem conta? <Link to="#">Cadastre-se</Link>
+        Ainda não tem conta? <Link to="/register">Cadastre-se</Link>
         </p>
       </div>
     </div>
