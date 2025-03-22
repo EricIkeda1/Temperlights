@@ -26,7 +26,7 @@ function App() {
 
 
           <header className="hero">
-            <h1>Rastreabilidade Industrial</h1>
+            <h1>Rastreabilidade Industrial</h1> 
             <p>Rastreabilidade de Produção industrial utilizando Visão Computacional</p>
             <button className="cta-btn">ORÇAMENTO →</button>
             <img src={fogueteGif} alt="Foguete" className="rocket" />
