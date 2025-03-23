@@ -16,12 +16,12 @@ const Orders = () => {
         <h2 className="logo">TEMPERLIGHTS</h2>
         <input type="text" placeholder="Pesquisar" className="search-bar" />
         <nav className="menu">
-          <a href="/dashboard">📊 Dashboard</a>
-          <a href="/pedidos">📦 Pedidos</a>
-          <a href="#">📂 Projetos</a>
-          <a href="#">⚙️ Configurações</a>
-          <a href="#">🔐 Permissões</a>
-          <a href="#">🗑️ Excluídos</a>
+          <Link to="/dashboard">📊 Dashboard</Link>
+          <Link to="/pedidos">📦 Pedidos</Link>
+          <Link to="#">📂 Projetos</Link>
+          <Link to="#">⚙️ Configurações</Link>
+          <Link to="#">🔐 Permissões</Link>
+          <Link to="#">🗑️ Excluídos</Link>
         </nav>
       </aside>
 
