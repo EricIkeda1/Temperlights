@@ -24,6 +24,8 @@ const Orders = () => {
           <Link to="#">⚙️ Configurações</Link>
           <Link to="#">🔐 Permissões</Link>
           <Link to="#">🗑️ Excluídos</Link>
+          <Link to="/home">🔐 Sair</Link>
+          
         </nav>
       </aside>
 
