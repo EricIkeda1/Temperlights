@@ -15,39 +15,51 @@
   overflow: hidden;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
   border-bottom: 2px solid #ff4081;
+  position: relative;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
   font-size: 24px;
   font-weight: bold;
   color: white;
 }
 
-.logo img {
-  width: 35px;
-  margin-right: 10px;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
 }
 
+/* Ajuste de navegação */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
+.nav-links li {
+  display: inline-block;
 }
 
+.nav-links button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Botão Demo */
 .demo-btn {
   background: none;
   border: 2px solid white;
@@ -64,6 +76,7 @@
   color: #30003b;
 }
 
+/* ===== HERO Seção ===== */
 .hero {
   display: flex;
   flex-direction: column;
@@ -103,6 +116,7 @@
   background: #009900;
 }
 
+/* ===== FOGUETE ANIMADO ===== */
 .rocket {
   width: 280px;
   position: absolute;
@@ -117,5 +131,82 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .hero {
+    padding: 80px 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .cta-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+
+  .rocket {
+    width: 180px;
+    right: 5%;
+    bottom: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cta-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .rocket {
+    width: 140px;
+    right: 2%;
+    bottom: 2%;
   }
 }

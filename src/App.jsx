@@ -6,6 +6,7 @@ import Login from "./components/Login";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   return (
     <div className="app-container">
