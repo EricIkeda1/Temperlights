@@ -1,6 +1,7 @@
 import React from "react";
 import { LineChart, Line, PieChart, Pie, Tooltip, Legend, XAxis, YAxis, CartesianGrid } from "recharts";
 import "../styles/dashboard.css";
+import { Link } from "react-router-dom";
 
 const dashboardProductionData = [
   { name: "Jan", receita: 10 },
