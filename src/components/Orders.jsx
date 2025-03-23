@@ -17,7 +17,7 @@ const Orders = () => {
         <input type="text" placeholder="Pesquisar" className="search-bar" />
         <nav className="menu">
           <a href="/dashboard">📊 Dashboard</a>
-          <a href="#">📦 Pedidos</a>
+          <a href="/pedidos">📦 Pedidos</a>
           <a href="#">📂 Projetos</a>
           <a href="#">⚙️ Configurações</a>
           <a href="#">🔐 Permissões</a>
