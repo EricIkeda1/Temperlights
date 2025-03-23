@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
+import Orders from "./components/Orders"; 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/pedidos" element={<Orders />} /> 
       </Routes>
     </BrowserRouter>
   </StrictMode>

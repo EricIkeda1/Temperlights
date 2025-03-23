@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import fogueteGif from "/src/assets/foguete.gif";
 import Login from "./components/Login";
-import { FaBars, FaTimes } from "react-icons/fa"; // Ícones do menu
+import { FaBars, FaTimes } from "react-icons/fa"; 
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // Estado do menu
+  const [menuOpen, setMenuOpen] = useState(false); 
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -25,12 +25,10 @@ function App() {
           <nav className="navbar">
             <div className="logo">Temperlights</div>
             
-            {/* Botão do menu hambúrguer */}
             <button className="menu-toggle" onClick={toggleMenu}>
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
 
-            {/* Menu de navegação */}
             <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
               <li><button className="nav-btn" onClick={closeMenu}>Home</button></li>
               <li><button className="nav-btn" onClick={closeMenu}>Sobre nós</button></li>
