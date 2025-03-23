@@ -24,8 +24,8 @@ const Orders = () => {
         </nav>
       </aside>
 
-      <main className="orders-content">
-        <header className="navbar">
+      <main className="dashboard-content">
+        <header className="dashboard-navbar">
           <span>Ana Ribeiro - Administradora</span>
         </header>
 

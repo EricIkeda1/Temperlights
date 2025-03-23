@@ -31,7 +31,7 @@ const Dashboard = () => {
         <h2 className="dashboard-title">TEMPERLIGHTS</h2>
         <input type="text" placeholder="Pesquisar" className="dashboard-search" />
         <nav className="dashboard-menu">
-          <a href="#">📦 Pedidos</a>
+          <a href="/pedidos">📦 Pedidos</a>
           <a href="#">📂 Projetos</a>
           <a href="#">⚙️ Configurações</a>
           <a href="#">🔐 Permissões</a>
