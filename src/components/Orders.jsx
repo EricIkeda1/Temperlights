@@ -16,6 +16,7 @@ const Orders = () => {
         <h2 className="logo">TEMPERLIGHTS</h2>
         <input type="text" placeholder="Pesquisar" className="search-bar" />
         <nav className="menu">
+          <a href="/dashboard">📊 Dashboard</a>
           <a href="#">📦 Pedidos</a>
           <a href="#">📂 Projetos</a>
           <a href="#">⚙️ Configurações</a>
