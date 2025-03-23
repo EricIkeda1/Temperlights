@@ -24,7 +24,7 @@ const dashboardStatusData = [
   { name: "Forno de Têmpera", value: 15.6, fill: "#FF6B6B" },
 ];
 
-const Dashboard = () => {/**/
+const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <aside className="dashboard-sidebar">
