@@ -18,12 +18,9 @@ const Orders = () => {
         <h2 className="logo">TEMPERLIGHTS</h2>
         <input type="text" placeholder="Pesquisar" className="search-bar" />
         <nav className="menu">
+          <Link to="/alarmes">📊 Alarmes</Link>
           <Link to="/dashboard">📊 Dashboard</Link>
           <Link to="/pedidos">📦 Pedidos</Link>
-          <Link to="#">📂 Projetos</Link>
-          <Link to="#">⚙️ Configurações</Link>
-          <Link to="#">🔐 Permissões</Link>
-          <Link to="#">🗑️ Excluídos</Link>
           <Link to="/home">🔐 Sair</Link>
           
         </nav>

@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.alarms-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.dashboard-sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.dashboard-search {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.dashboard-menu a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.alarms-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.status-cards {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.status-card {
+    flex: 1;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-card span {
+    font-size: 24px;
+    display: block;
+    font-weight: bold;
+}
+
+.green { background-color: #4CAF50; }
+.yellow { background-color: #FFC107; }
+.blue { background-color: #2196F3; }
+.red { background-color: #F44336; }
+
+.alarms-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alarms-table th, .alarms-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.alarms-table th {
+    background-color: #ddd;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.row-orange { background-color: #FFCC80; }
+.row-green { background-color: #C8E6C9; }
+.row-blue { background-color: #BBDEFB; }
+.row-red { background-color: #FFCDD2; }
