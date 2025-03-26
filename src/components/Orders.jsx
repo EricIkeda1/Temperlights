@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/orders.css";
 import { Link } from "react-router-dom";
-
 
 const orders = [
   { id: 393, name: "AL. SEMPREVERDE", progress: 80.8, status: "alerta" },
@@ -12,6 +11,17 @@ const orders = [
 ];
 
 const Orders = () => {
+  const [activeFilter, setActiveFilter] = useState("todos");
+
+  const handleFilterChange = (status) => {
+    setActiveFilter(status);
+  };
+
+  const filteredOrders = orders.filter((order) => {
+    if (activeFilter === "todos") return true;
+    return order.status === activeFilter;
+  });
+
   return (
     <div className="orders-container">
       <aside className="sidebar">
@@ -22,7 +32,6 @@ const Orders = () => {
           <Link to="/dashboard">📊 Dashboard</Link>
           <Link to="/pedidos">📦 Pedidos</Link>
           <Link to="/home">🔐 Sair</Link>
-          
         </nav>
       </aside>
 
@@ -34,15 +43,41 @@ const Orders = () => {
         <div className="orders-header">
           <h1>PEDIDOS</h1>
           <div className="status-filters">
-            <button className="filter em-andamento">EM ANDAMENTO</button>
-            <button className="filter alerta">ALERTA</button>
-            <button className="filter finalizado">FINALIZADO</button>
-            <button className="filter cancelado">CANCELADO</button>
+            <button
+              className={`filter em-andamento ${activeFilter === "em-andamento" ? "active" : ""}`}
+              onClick={() => handleFilterChange("em-andamento")}
+            >
+              EM ANDAMENTO
+            </button>
+            <button
+              className={`filter alerta ${activeFilter === "alerta" ? "active" : ""}`}
+              onClick={() => handleFilterChange("alerta")}
+            >
+              ALERTA
+            </button>
+            <button
+              className={`filter finalizado ${activeFilter === "finalizado" ? "active" : ""}`}
+              onClick={() => handleFilterChange("finalizado")}
+            >
+              FINALIZADO
+            </button>
+            <button
+              className={`filter cancelado ${activeFilter === "cancelado" ? "active" : ""}`}
+              onClick={() => handleFilterChange("cancelado")}
+            >
+              CANCELADO
+            </button>
+            <button
+              className={`filter todos ${activeFilter === "todos" ? "active" : ""}`}
+              onClick={() => handleFilterChange("todos")}
+            >
+              TODOS
+            </button>
           </div>
         </div>
 
         <div className="orders-list">
-          {orders.map((order) => (
+          {filteredOrders.map((order) => (
             <div key={order.id} className={`order-card ${order.status}`}>
               <span className="order-id">#{order.id} - {order.name}</span>
               <span className="order-progress">{order.progress}%</span>
