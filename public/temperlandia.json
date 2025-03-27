@@ -1,0 +1,94 @@
+{
+  "TEMPERLANDIA": [
+    {
+      "imagem": "estampa_1.png",
+      "têmpera": {
+        "necessaria": true,
+        "confianca": 0.42540841779213373
+      },
+      "peso": {
+        "valor": 2.0,
+        "unidade": "kg",
+        "confianca": 0.999999880790714
+      },
+      "dados demais da etiqueta": [
+        {
+          "texto": "TEMPERLÂMDDIA",
+          "confianca": 0.5054178691034482
+        },
+        {
+          "texto": "Gruro",
+          "confianca": 0.4653332435865673
+        },
+        {
+          "texto": "Onio",
+          "confianca": 0.1963742971420288
+        },
+        {
+          "texto": "ENGENHARIA 37,41 KgA XALTURA",
+          "confianca": 0.7113484151101126
+        },
+        {
+          "texto": "OF 1759 16/08/24",
+          "confianca": 0.6014285477843088
+        },
+        {
+          "texto": "716",
+          "confianca": 0.9999794211992603
+        },
+        {
+          "texto": "x 2090]",
+          "confianca": 0.49063457906136526
+        },
+        {
+          "texto": "Item 3/10 - 1 d6 1 Tot: 1J",
+          "confianca": 0.1763036352366254
+        },
+        {
+          "texto": "252200*7a95t039j01",
+          "confianca": 0.009830099122157218
+        },
+        {
+          "texto": "26/08/24 +5 53 FaBINHO",
+          "confianca": 0.11733611568903583
+        },
+        {
+          "texto": "UxDaHIR DE Lima CEOLIS",
+          "confianca": 0.10202692773473208
+        },
+        {
+          "texto": "FR",
+          "confianca": 0.996413588176387
+        },
+        {
+          "texto": "CAHBE",
+          "confianca": 0.3480475265157247
+        },
+        {
+          "texto": "VERDE 10MM",
+          "confianca": 0.5753430407298737
+        },
+        {
+          "texto": "TEMPERADO",
+          "confianca": 0.42540841779213373
+        },
+        {
+          "texto": "2",
+          "confianca": 0.999999880790714
+        },
+        {
+          "texto": "2g5UAco",
+          "confianca": 0.012579962590927574
+        },
+        {
+          "texto": "(Gc12/08/2024",
+          "confianca": 0.6668181426863179
+        },
+        {
+          "texto": "PoRTA Correr",
+          "confianca": 0.14279689412148389
+        }
+      ]
+    }
+  ]
+}

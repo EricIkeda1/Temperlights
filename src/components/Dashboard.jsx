@@ -1,31 +1,39 @@
-import React from "react";
-import { LineChart, Line, PieChart, Pie, Tooltip, Legend, XAxis, YAxis, CartesianGrid } from "recharts";
+import React, { useEffect, useState } from "react";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, LineChart, Line, PieChart, Pie, Cell, Legend, CartesianGrid } from "recharts";
 import "../styles/dashboard.css";
 import { Link } from "react-router-dom";
 
-const dashboardProductionData = [
-  { name: "Jan", receita: 10 },
-  { name: "Feb", receita: 30 },
-  { name: "Mar", receita: 50 },
-  { name: "Apr", receita: 80 },
-  { name: "May", receita: 100 },
-  { name: "Jun", receita: 130 },
-  { name: "Jul", receita: 150 },
-  { name: "Aug", receita: 170 },
-  { name: "Sep", receita: 190 },
-  { name: "Oct", receita: 210 },
-  { name: "Nov", receita: 230 },
-  { name: "Dec", receita: 250 },
-];
-
-const dashboardStatusData = [
-  { name: "Corte", value: 22.2, fill: "#8884d8" },
-  { name: "Carregamento", value: 33, fill: "#82ca9d" },
-  { name: "Lapidação", value: 29.1, fill: "#FFCC00" },
-  { name: "Forno de Têmpera", value: 15.6, fill: "#FF6B6B" },
-];
-
 const Dashboard = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/temperlandia.json")
+      .then((response) => response.json())
+      .then((jsonData) => {
+        if (jsonData.TEMPERLANDIA) {
+          const etiquetas = jsonData.TEMPERLANDIA[0]["dados demais da etiqueta"];
+          const confianças = etiquetas.map((item) => ({
+            texto: item.texto.substring(0, 8),
+            confianca: item.confianca,
+          }));
+          const altas = confianças.filter((item) => item.confianca > 0.5).length;
+          const baixas = confianças.length - altas;
+          const pizzaData = [
+            { name: "Confiança Alta", value: altas },
+            { name: "Confiança Baixa", value: baixas },
+          ];
+          const linhasData = etiquetas.map((item, index) => ({
+            index,
+            confianca: item.confianca,
+          }));
+          setData({ confianças, pizzaData, linhasData });
+        }
+      })
+      .catch((error) => console.error("Erro ao carregar os dados:", error));
+  }, []);
+
+  if (!data) return <p>Carregando dados...</p>;
+
   return (
     <div className="dashboard-container">
       <aside className="dashboard-sidebar">
@@ -38,7 +46,7 @@ const Dashboard = () => {
           <Link to="/home">🔐 Sair</Link>
         </nav>
       </aside>
-
+      
       <main className="dashboard-content">
         <header className="dashboard-navbar">
           <span>Ana Ribeiro - Administradora</span>
@@ -68,25 +76,27 @@ const Dashboard = () => {
               <p>+3 essa semana</p>
             </div>
           </div>
+            
+            <div className="dashboard-charts-container">
+              <div className="dashboard-chart dashboard-bar-chart">
 
-          <div className="dashboard-charts-container">
-            <div className="dashboard-chart dashboard-line-chart">
-              <h3>Estatísticas de Receita</h3>
-              <LineChart width={600} height={300} data={dashboardProductionData}>
+              <h3>Variação da Confiança</h3>
+              <LineChart width={600} height={300} data={data.linhasData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" stroke="#ffffff" />
-                <YAxis stroke="#ffffff" />
+                <XAxis dataKey="index" />
+                <YAxis />
                 <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="receita" stroke="#ffffff" />
+                <Line type="monotone" dataKey="confianca" stroke="#ff7300" />
               </LineChart>
             </div>
 
             <div className="dashboard-chart dashboard-pie-chart">
-              <h3>Perdas Por Setor</h3>
-              <PieChart width={300} height={300}>
-                <Pie data={dashboardStatusData} dataKey="value" cx="50%" cy="50%" outerRadius={100} label />
-                <Tooltip />
+              <h3>Distribuição de Confianças</h3>
+              <PieChart width={400} height={400}>
+                <Pie data={data.pizzaData} cx={200} cy={200} outerRadius={80} dataKey="value">
+                  <Cell fill="#00C49F" />
+                  <Cell fill="#FF8042" />
+                </Pie>
                 <Legend />
               </PieChart>
             </div>
