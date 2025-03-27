@@ -40,7 +40,7 @@ const Dashboard = () => {
         <h2 className="dashboard-title">TEMPERLIGHTS</h2>
         <input type="text" placeholder="Pesquisar" className="dashboard-search" />
         <nav className="dashboard-menu">
-          <Link to="/alarmes">📊 Alarmes</Link>
+          <Link to="/alarmes">🚨 Alarmes</Link>
           <Link to="/dashboard">📊 Dashboard</Link>
           <Link to="/pedidos">📦 Pedidos</Link>
           <Link to="/home">🔐 Sair</Link>
