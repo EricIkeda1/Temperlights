@@ -1,14 +1,6 @@
 .dashboard-container {
     display: flex;
     height: 100vh;
-    background-color: #0b0f16;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-.dashboard-container {
-    display: flex;
-    height: 100vh;
     width: 100vw;
     background-color: #0b0f16;
     color: white;
@@ -146,6 +138,7 @@
 .dashboard-charts-container {
     display: flex;
     gap: 20px;
+    justify-content: space-between;
 }
 
 .dashboard-chart {
@@ -153,4 +146,74 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .dashboard-content {
+        padding: 10px;
+    }
+
+    .dashboard-charts-container {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    .dashboard-chart {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dashboard-stats-card {
+        width: 100%;
+    }
+
+    .dashboard-navbar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .dashboard-main h1 {
+        font-size: 24px;
+    }
+
+    .dashboard-menu a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-navbar {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .dashboard-stats-card h2 {
+        font-size: 18px;
+    }
+
+    .dashboard-main h1 {
+        font-size: 20px;
+    }
+
+    .dashboard-menu a {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
