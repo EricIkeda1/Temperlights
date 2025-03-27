@@ -1,19 +1,30 @@
 import "./../styles/login.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Login = () => {
-  const navigate = useNavigate(); 
-  
+  const [menuOpen, setMenuOpen] = useState(false); 
+  const navigate = useNavigate();
+
   const handleLogin = (event) => { /*Como ainda não tem banco de dados, coloque algum email e a senha ficticio*/
-    event.preventDefault(); 
-    navigate("/dashboard"); 
+    event.preventDefault();
+    navigate("/dashboard");
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen); 
   };
 
   return (
     <div className="login-container">
       <nav className="login-navbar">
         <div className="login-logo">Temperlights</div>
-        <ul className="login-nav-links">
+
+        <div className="hamburger-icon" onClick={toggleMenu}>
+          ☰
+        </div>
+
+        <ul className={`login-nav-links ${menuOpen ? "active" : ""}`}>
           <li><Link to="/home">Home</Link></li>
           <li><Link to="#">Sobre nós</Link></li>
           <li><Link to="#">Search</Link></li>
