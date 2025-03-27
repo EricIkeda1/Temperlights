@@ -1,12 +1,24 @@
+import { useState } from "react";
 import "../styles/register.css";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="register-container">
       <nav className="register-navbar">
         <div className="register-logo">Temperlights</div>
-        <ul className="register-nav-links">
+
+        <div className="hamburger-icon" onClick={toggleMenu}>
+          ☰
+        </div>
+
+        <ul className={`register-nav-links ${menuOpen ? "active" : ""}`}>
           <li><Link to="/home">Home</Link></li>
           <li><Link to="#">Sobre nós</Link></li>
           <li><Link to="#">Search</Link></li>
@@ -16,7 +28,7 @@ const Register = () => {
           <li><Link to="#">🔍</Link></li>
         </ul>
       </nav>
-      
+
       <h2 className="register-title">Criar Nova Conta</h2>
       <p className="register-subtitle">Ainda não tem uma conta? Ingresse já</p>
       <form className="register-form">

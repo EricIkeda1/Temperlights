@@ -6,7 +6,6 @@ html, body {
   overflow: hidden;
 }
 
-
 .register-container {
   background-color: #0b0d1e;
   color: white;
@@ -19,21 +18,9 @@ html, body {
   overflow: hidden;
 }
 
-.register-logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #0b0d1e !important; 
-}
-
-.register-nav-links a {
-  color: #0b0d1e !important; 
-  text-decoration: none;
-  font-weight: 500;
-}
-
 .register-navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 15px 60px;
@@ -42,14 +29,14 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }
-
 
 .register-logo {
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: #0b0d1e !important;
+  flex-grow: 1; 
 }
 
 .register-nav-links {
@@ -64,14 +51,46 @@ html, body {
 }
 
 .register-nav-links a {
-  color: white;
+  color: #0b0d1e !important;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .register-search-input {
   padding: 5px;
   border-radius: 5px;
   border: none;
+}
+
+.hamburger-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.register-nav-links.active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #f8f9fa;
+  padding: 15px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register-nav-links a {
+  color: black;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.register-nav-links li {
+  width: 100%;
+  display: block;
 }
 
 .register-title {
@@ -112,4 +131,58 @@ html, body {
 
 .register-login-link {
   margin-top: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.register-login-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+    background: #f8f9fa;
+  }
+
+  .hamburger-icon {
+    display: block;
+  }
+
+  .register-nav-links.active {
+    display: flex;
+  }
+
+  .register-title {
+    font-size: 20px;
+  }
+
+  .register-form {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .register-label {
+    font-size: 14px;
+  }
+
+  .register-input {
+    padding: 10px;
+  }
+
+  .register-button {
+    padding: 12px;
+  }
+
+  .register-login-link {
+    font-size: 14px;
+  }
 }
