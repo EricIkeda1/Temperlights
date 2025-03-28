@@ -23,14 +23,9 @@ const pieData = [
 const OrderDetails = () => {
   return (
     <div className="order-details-container">
-      <header>
-        <h1>PEDIDO #393 - AL. SEMPREVERDE</h1>
-      </header>
-
-      <div className="order-details">
-        <aside className="sidebar">
-          <h2 className="logo">TEMPERLIGHTS</h2>
-          <input type="text" placeholder="Pesquisar" className="search-box" />
+      <aside className="sidebar">
+        <h2 className="logo">TEMPERLIGHTS</h2>
+        <input type="text" placeholder="Pesquisar" className="search-box" />
         <nav className="menu">
           <Link to="/alarmes">🚨 Alarmes</Link>
           <Link to="/dashboard">📊 Dashboard</Link>
@@ -38,40 +33,51 @@ const OrderDetails = () => {
           <Link to="/pedidos">📦 Pedidos</Link>
           <Link to="/home">🔐 Sair</Link>
         </nav>
-        </aside>
+      </aside>
 
-        <main className="content">
-          <section className="production-analysis">
-            <h2>Análise de Produção</h2>
-            <LineChart width={500} height={300} data={lineData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="lote1" stroke="#8884d8" />
-              <Line type="monotone" dataKey="lote2" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="lote3" stroke="#ff0000" />
-            </LineChart>
-            <div className="lote-buttons">
-              <button className="lote1-btn">LOTE 1</button>
-              <button className="lote2-btn">LOTE 2</button>
-              <button className="lote3-btn">LOTE 3</button>
-            </div>
-          </section>
+      <div className="main-content">
+        <header>
+          <h1>PEDIDO #393 - AL. SEMPREVERDE</h1>
+          <span className="user-info">Ana Ribeiro - Administradora</span>
+        </header>
 
-          <section className="lot-status">
-            <h2>Status do Lote</h2>
-            <PieChart width={300} height={250}>
-              <Pie data={pieData} cx={150} cy={125} innerRadius={50} outerRadius={80} dataKey="value">
-                {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.color} />
-                ))}
-              </Pie>
-              <Tooltip />
-            </PieChart>
-          </section>
-        </main>
+        <section className="production-analysis">
+          <h2>Análise de Produção</h2>
+          <LineChart width={500} height={300} data={lineData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="lote1" stroke="#8884d8" />
+            <Line type="monotone" dataKey="lote2" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="lote3" stroke="#ff0000" />
+          </LineChart>
+          <div className="lote-buttons">
+            <button className="lote1-btn">LOTE 1</button>
+            <button className="lote2-btn">LOTE 2</button>
+            <button className="lote3-btn">LOTE 3</button>
+          </div>
+        </section>
+
+        <section className="lot-status">
+          <h2>Lote 1</h2>
+          <PieChart width={300} height={250}>
+            <Pie data={pieData} cx={150} cy={125} innerRadius={50} outerRadius={80} dataKey="value">
+              {pieData.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </section>
+
+        <section className="piece-issue">
+          <h3 className="piece-title">Peça #7 - Lote 3</h3>
+          <p className="piece-description">Peça quebrou no forno de Têmpera devido ao manuseio.</p>
+          <span className="piece-user">Ribeiro Santos</span>
+          <span className="piece-sector">Setor 2</span>
+        </section>
       </div>
     </div>
   );

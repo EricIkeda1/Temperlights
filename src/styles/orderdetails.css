@@ -1,59 +1,32 @@
-* {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0b0d36;
+  color: white;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  height: 100vh;
-  font-family: 'Arial', sans-serif;
-  background-color: #0e0e2c;
-  color: white;
-  display: flex;
-  flex-direction: column;
 }
 
 .order-details-container {
-  width: 100%;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-}
-
-header {
-  text-align: center;
-  padding: 15px;
-  background-color: #121235;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.order-details {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
 }
 
 .sidebar {
-  width: 240px;
-  background: #121235;
+  width: 250px;
+  background-color: #02051c;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .logo {
-  text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  text-align: center;
   margin-bottom: 20px;
 }
 
 .search-box {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border-radius: 5px;
   border: none;
   margin-bottom: 20px;
@@ -61,86 +34,89 @@ header {
 
 .menu a {
   display: block;
-  padding: 10px 0;
   color: white;
   text-decoration: none;
-  transition: 0.3s;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.content {
+.menu a:hover {
+  background-color: #1c1f48;
+}
+
+.main-content {
   flex: 1;
+  padding: 20px;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  overflow: auto;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .production-analysis {
-  background: white;
+  background: #1c1f48;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  color: black;
-  width: 60%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .lote-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
   margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.lote-buttons button {
+.lote1-btn, .lote2-btn, .lote3-btn {
   padding: 10px 15px;
   border: none;
-  cursor: pointer;
-  font-weight: bold;
   border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.lote1-btn { background-color: #8884d8; color: white; }
-.lote2-btn { background-color: #82ca9d; color: white; }
-.lote3-btn { background-color: #ff0000; color: white; }
+.lote1-btn { background-color: #8884d8; }
+.lote2-btn { background-color: #82ca9d; }
+.lote3-btn { background-color: #ff0000; }
 
 .lot-status {
-  background: white;
+  background: #1c1f48;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  color: black;
-  width: 35%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 20px;
 }
 
-@media (max-width: 1024px) {
-  .order-details {
-    flex-direction: column;
-  }
+.piece-issue {
+  background: #1c1f48;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
 
-  .sidebar {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-  }
+.piece-title {
+  font-size: 18px;
+  color: #6495ED;
+}
 
-  .content {
-    flex-direction: column;
-    padding: 10px;
-    align-items: center;
-  }
+.piece-description {
+  font-size: 16px;
+}
 
-  .production-analysis, .lot-status {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+.piece-user {
+  background: #3b5998;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.piece-sector {
+  background: #5c5c5c;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: inline-block;
 }
