@@ -36,7 +36,7 @@ header {
 }
 
 .sidebar {
-  width: 220px;
+  width: 240px;
   background: #121235;
   padding: 20px;
   display: flex;
@@ -65,10 +65,6 @@ header {
   color: white;
   text-decoration: none;
   transition: 0.3s;
-}
-
-.menu a:hover {
-  color: #4caf50;
 }
 
 .content {
