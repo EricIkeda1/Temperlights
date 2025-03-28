@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #0e0e2c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-details-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 15px;
+  background-color: #121235;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.order-details {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 220px;
+  background: #121235;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #4caf50;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  overflow: auto;
+}
+
+.production-analysis {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  color: black;
+  width: 60%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lote-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.lote-buttons button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.lote1-btn { background-color: #8884d8; color: white; }
+.lote2-btn { background-color: #82ca9d; color: white; }
+.lote3-btn { background-color: #ff0000; color: white; }
+
+.lot-status {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  color: black;
+  width: 35%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .order-details {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .production-analysis, .lot-status {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}

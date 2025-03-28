@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
 import Orders from "./components/Orders";
 import Alarms from "./components/Alarms";
+import OrderDetails from "./components/OrderDetails"; 
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -20,6 +21,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pedidos" element={<Orders />} />
         <Route path="/alarmes" element={<Alarms />} />
+        <Route path="/order/" element={<OrderDetails />} />
+
       </Routes>
     </BrowserRouter>
   </StrictMode>
