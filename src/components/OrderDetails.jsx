@@ -23,7 +23,6 @@ const pieData = [
 const OrderDetails = () => {
   return (
     <div className="order-details-container">
-      {/* Cabeçalho */}
       <header>
         <h1>PEDIDO #393 - AL. SEMPREVERDE</h1>
       </header>
