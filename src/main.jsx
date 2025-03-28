@@ -21,7 +21,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/pedidos" element={<Orders />} />
         <Route path="/alarmes" element={<Alarms />} />
-        <Route path="/order/" element={<OrderDetails />} />
+        <Route path="/pedidosdetalhados" element={<OrderDetails />} />
 
       </Routes>
     </BrowserRouter>

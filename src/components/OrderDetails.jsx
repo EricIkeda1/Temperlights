@@ -31,13 +31,13 @@ const OrderDetails = () => {
         <aside className="sidebar">
           <h2 className="logo">TEMPERLIGHTS</h2>
           <input type="text" placeholder="Pesquisar" className="search-box" />
-          <nav className="menu">
-            <Link to="/pedidos">📦 Pedidos</Link>
-            <Link to="/projetos">📁 Projetos</Link>
-            <Link to="/configuracoes">⚙️ Configurações</Link>
-            <Link to="/permissoes">🔑 Permissões</Link>
-            <Link to="/excluidos">🗑️ Excluídos</Link>
-          </nav>
+        <nav className="menu">
+          <Link to="/alarmes">🚨 Alarmes</Link>
+          <Link to="/dashboard">📊 Dashboard</Link>
+          <Link to="/pedidosdetalhados">📋 Detalhes do Pedido</Link>
+          <Link to="/pedidos">📦 Pedidos</Link>
+          <Link to="/home">🔐 Sair</Link>
+        </nav>
         </aside>
 
         <main className="content">

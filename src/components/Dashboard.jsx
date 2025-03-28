@@ -42,6 +42,7 @@ const Dashboard = () => {
         <nav className="dashboard-menu">
           <Link to="/alarmes">🚨 Alarmes</Link>
           <Link to="/dashboard">📊 Dashboard</Link>
+          <Link to="/pedidosdetalhados">📋 Detalhes do Pedido</Link>
           <Link to="/pedidos">📦 Pedidos</Link>
           <Link to="/home">🔐 Sair</Link>
         </nav>
